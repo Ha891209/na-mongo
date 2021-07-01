@@ -1,0 +1,19 @@
+pug
+extends layout
+
+block content
+  .container
+    h1.mb-5 Felhasználó létrehozása
+    - const action = "/users/create";
+    form.form(action=action, method="post")
+      .form-group 
+        label(class="mb-3") Név: 
+        input(type="text" name="name" class="form-control mb-3")
+      .form-group 
+        label(class="mb-3") Kor: 
+        input(type="number" name="age" class="form-control mb-3")
+      .form-group 
+        label(class="mb-3") Email:
+        input(type="email" name="email" class="form-control mb-5")
+      .form-group
+        button.btn.btn-success(type="submit") Létrehozás

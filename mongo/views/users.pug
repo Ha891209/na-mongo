@@ -1,0 +1,31 @@
+pug
+extends layout
+
+block content
+  .container
+    h1.mb-5.text-center Felhasználók
+    .row
+      a.btn.btn-primary.mb-3.btn-block(href="/users/create") Új felhasználó
+    table.table.table-striped
+      thead
+        tr 
+          th #
+          th Név
+          th Kor
+          th Email
+          th
+      tbody
+        - let nth = 0
+        each user in users 
+          - nth++
+          tr 
+            td=nth
+            td=user.name
+            td=user.age
+            td=user.email
+            td
+              .btn-group
+                - const infoUrl = `/users/show/${user._id}`
+                a.btn.btn-info(href=infoUrl) Szerkeszt
+                - const deleteUrl = `/users/delete/${user._id}`
+                a.btn.btn-danger.delete-user-btn(href=deleteUrl) Töröl
