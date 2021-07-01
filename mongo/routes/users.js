@@ -10,8 +10,6 @@ router.get('/', function (req, res, next) {
   });
 });
 
-module.exports = router;
-
 router.get('/show/:id', function (req, res, next) {
   userModel.findOne({ _id: req.params.id }, (error, user) => {
     res.render('showuser', { user: user });

@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 //Init mongoose.
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb://localhost:27017/na', { useNewUrlParser: true, useUnifiedTopology: true });
 
 var app = express();
 
